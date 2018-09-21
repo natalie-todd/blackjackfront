@@ -4,7 +4,7 @@ import { Alert, Row, Col, Button } from 'reactstrap';
 
 const inter = () => {
     return (
-        <div>
+        <div className='interface'>
             {console.log('interface is here')}
             <Outcome />
             <div>
@@ -15,9 +15,11 @@ const inter = () => {
                         <Alert color='dark'>Player Score : </Alert></Col>
                 </Row>
             </div>
-            <Button color='success'>Deal</Button>
-            <Button color='danger'>Hit</Button>
-            <Button color='primary'>Stand</Button>
+            <div>
+                <Button color='success'>Deal</Button>
+                <Button color='danger'>Hit</Button>
+                <Button color='primary'>Stand</Button>
+            </div>
         </div>
     )
 }
