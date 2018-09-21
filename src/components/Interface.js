@@ -1,5 +1,6 @@
 import React from 'react';
 import Outcome from './Outcome';
+import { Alert } from 'reactstrap';
 
 const inter = () => {
     return (
@@ -7,8 +8,8 @@ const inter = () => {
             {console.log('interface is here')}
             <Outcome />
             <div>
-                <a>Dealer Score : </a>
-                <a>Player Score : </a>
+                <Alert color='dark'>Dealer Score : </Alert>
+                <Alert color='dark'>Player Score : </Alert>
             </div>
             <button >Deal</button>
             <button>Hit</button>
