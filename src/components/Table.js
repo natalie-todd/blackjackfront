@@ -26,7 +26,6 @@ class Table extends Component {
             cards = <Hand
                 test={this.state.values}
                 suit={this.state.suits}
-                clicked={this.dealCards}
             />
         }
         return (
@@ -35,6 +34,7 @@ class Table extends Component {
                     test={this.state.values}
                     suit={this.state.suits}
                     clicked={this.dealCards} />
+                    {cards}
                 {console.log('table is here')}
             </div>
         )
