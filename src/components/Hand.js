@@ -5,9 +5,13 @@ const hand = (props) => {
     return (
         <div>
             {console.log('hand is here')}
-            <Card />
-            <p>This is {props.test}</p>
-            <Card />
+            <Card
+                suit={props.suit}
+                test={props.test} />
+            <p>This hand is {props.test}</p>
+            <Card
+                suit={props.suit[2]}
+                test={props.test} />
         </div>
     )
 }

@@ -17,9 +17,16 @@ class Table extends Component {
         return (
             <div>
                 {console.log('table is here')}
-                <Hand test={this.state.values[2]} />
+                <Hand 
+                test={this.state.values} 
+                suit={this.state.suits}
+                color={this.state.colors}
+                />
                 <Interface />
-                <Hand test={this.state.values[4]}/>
+                <Hand test={this.state.values[4]}
+                suit={this.state.suits}
+                color={this.state.colors}
+                />
             </div>
         )
     }
