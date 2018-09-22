@@ -6,7 +6,7 @@ const card = (props) => {
         <div>
             {console.log('card is here')}
             <p>
-                This card is {props.suit}
+                This card is {props.suit}.
                 </p>
         </div>
     )
