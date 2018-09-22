@@ -6,11 +6,11 @@ const hand = (props) => {
         <div>
             {console.log('hand is here')}
             <Card
-                suit={props.suits}
+                suit={props.suit}
                 test={props.test} />
             <p>This hand is {props.test}</p>
             <Card
-                suit={props.suits}
+                suit={props.suit[2]}
                 test={props.test} />
         </div>
     )
