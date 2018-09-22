@@ -8,9 +8,9 @@ class Table extends Component {
         this.state = {
             suits: ['♣', '♦', '♥', '♠'],
             values: [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'],
-            colors: [
-                { '♣': 'black', '♦': 'red', '♥': 'red', '♠': 'black' }
-            ]
+            // colors: [
+            //     { id: 1, clubs: 'black', diamonds: 'red', hearts: 'red', spades: 'black' }
+            // ]
         }
     }
     render() {
@@ -20,12 +20,10 @@ class Table extends Component {
                 <Hand 
                 test={this.state.values} 
                 suit={this.state.suits}
-                color={this.state.colors}
                 />
                 <Interface />
                 <Hand test={this.state.values[4]}
                 suit={this.state.suits}
-                color={this.state.colors}
                 />
             </div>
         )
