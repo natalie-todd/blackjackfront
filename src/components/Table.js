@@ -6,7 +6,7 @@ class Table extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            suits: ['♣', '♦', '♥', '♠'],
+            suits: ['♣', '♦', 'heart', '♠'],
             values: [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'],
             colors: [
                 { '♣': 'black', '♦': 'red', '♥': 'red', '♠': 'black' }
@@ -17,7 +17,10 @@ class Table extends Component {
         return (
             <div>
                 {console.log('table is here')}
-                <Hand test={this.state.values[2]} />
+                <Hand 
+                test={this.state.values} 
+                suit={this.state.suits}
+                />
                 <Interface />
                 <Hand test={this.state.values[4]}/>
             </div>
