@@ -15,26 +15,23 @@ class Table extends Component {
         }
     }
 
+    shuffleSuits = (suits) => {
+        let i = 0, j = 0, temp = null;
+        for (i = suits.length - 1; i > 0; i -= 1) {
+            j = Math.floor(Math.random() * (i + 1))
+            temp = suits[i]
+            suits[i] = suits[j]
+            suits[j] = temp
+        }
+        this.setState({ suits: suits })
+        console.log(suits);
+    }
+    
     dealCards = () => {
+        // shuffleSuits(this.state.suits)
         const doesShow = this.state.showCards;
         this.setState({ showCards: !doesShow })
-    }
-
-    suitOrder = this.state.suits;
-
-    shuffleSuits = (suits) => {
-        let change = suits.length, something, index;
-        while (change > 0) {
-            // Pick a random index
-            index = Math.floor(Math.random() * change);
-            // Decrease change by 1
-            change--;
-            // And swap the last element with it
-            temp = suits[change];
-            suits[change] = suits[index];
-            suits[index] = temp;
-        }
-        return suits;
+        console.log(this.state.suits)
     }
 
     render() {
