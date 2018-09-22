@@ -2,7 +2,7 @@ import React from 'react';
 import Outcome from './Outcome';
 import { Alert, Row, Col, Button } from 'reactstrap';
 
-const inter = () => {
+const inter = (props) => {
     return (
         <div className='interface'>
             {console.log('interface is here')}
@@ -16,7 +16,9 @@ const inter = () => {
                 </Row>
             </div>
             <div>
-                <Button color='success'>Deal</Button>
+                <Button 
+                onClick={props.clicked}
+                color='success'>Deal</Button>
                 <Button color='danger'>Hit</Button>
                 <Button color='primary'>Stand</Button>
             </div>

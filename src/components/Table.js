@@ -26,10 +26,15 @@ class Table extends Component {
             cards = <Hand
                 test={this.state.values}
                 suit={this.state.suits}
+                clicked={this.dealCards}
             />
         }
         return (
             <div>
+                <Interface
+                    test={this.state.values}
+                    suit={this.state.suits}
+                    clicked={this.dealCards} />
                 {console.log('table is here')}
             </div>
         )
