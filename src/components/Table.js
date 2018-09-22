@@ -20,6 +20,23 @@ class Table extends Component {
         this.setState({ showCards: !doesShow })
     }
 
+    suitOrder = this.state.suits;
+
+    shuffleSuits = (suits) => {
+        let change = suits.length, something, index;
+        while (change > 0) {
+            // Pick a random index
+            index = Math.floor(Math.random() * change);
+            // Decrease change by 1
+            change--;
+            // And swap the last element with it
+            temp = suits[change];
+            suits[change] = suits[index];
+            suits[index] = temp;
+        }
+        return suits;
+    }
+
     render() {
         let cards = null;
         if (this.state.showCards) {
@@ -30,23 +47,15 @@ class Table extends Component {
         }
         return (
             <div>
+                {cards}
                 <Interface
                     test={this.state.values}
                     suit={this.state.suits}
                     clicked={this.dealCards} />
-                    {cards}
+                {cards}
                 {console.log('table is here')}
             </div>
         )
     }
 }
 export default Table;
-
-//    <Hand
-//                     test={this.state.values}
-//                     suit={this.state.suits}
-//                 />
-//                 <Interface />
-//                 <Hand test={this.state.values[4]}
-//                     suit={this.state.suits}
-//                 />
