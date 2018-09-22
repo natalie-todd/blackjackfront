@@ -11,22 +11,37 @@ class Table extends Component {
             // colors: [
             //     { id: 1, clubs: 'black', diamonds: 'red', hearts: 'red', spades: 'black' }
             // ]
+            showCards: false
         }
     }
+
+    dealCards = () => {
+        const doesShow = this.state.showCards;
+        this.setState({ showCards: !doesShow })
+    }
+
     render() {
+        let cards = null;
+        if (this.state.showCards) {
+            cards = <Hand
+                test={this.state.values}
+                suit={this.state.suits}
+            />
+        }
         return (
             <div>
                 {console.log('table is here')}
-                <Hand 
-                test={this.state.values} 
-                suit={this.state.suits}
-                />
-                <Interface />
-                <Hand test={this.state.values[4]}
-                suit={this.state.suits}
-                />
             </div>
         )
     }
 }
 export default Table;
+
+//    <Hand
+//                     test={this.state.values}
+//                     suit={this.state.suits}
+//                 />
+//                 <Interface />
+//                 <Hand test={this.state.values[4]}
+//                     suit={this.state.suits}
+//                 />
