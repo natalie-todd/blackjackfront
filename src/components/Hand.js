@@ -7,8 +7,9 @@ const hand = (props) => {
             {console.log('hand is here')}
             <Card
                 suit={props.suit}
-                test={props.test} />
-            <p>This hand is {props.test}</p>
+                test={props.test} 
+                />
+            <p>This hand is {props.test}.</p>
             <Card
                 suit={props.suit[2]}
                 test={props.test} />
