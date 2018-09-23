@@ -33,11 +33,15 @@
 }
 
 .top-rank {
+  padding: 5px;
+  font-size: 20px;
   position: absolute;
   left: 0;
   top: 0;
 }
 .bottom-rank {
+  padding: 5px;
+  font-size: 20px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -52,25 +56,25 @@
   border-color: red;
 }
 
-/* &:after {
+:after {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%,-50%);
   font-size: 40px;
 }
 
-&.H:after {
+.H:after {
   content: '\2665';
 }
 
-&.D:after {
+.D:after {
   content: '\2666';
 }
 
-&.S:after {
+.S:after {
   content: '\2660';
 }
 
-&.C:after {
+.C:after {
   content: '\2663';
-} */
+} 
