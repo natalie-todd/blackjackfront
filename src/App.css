@@ -2,7 +2,6 @@
   text-align: center;
   background-color: black;
   color: white;
-  height: 100vh;
 }
 
 .oInterface {
@@ -54,6 +53,11 @@
 .H, .D {
   color: red;
   border-color: red;
+}
+
+.C, .S {
+  color: black;
+  border-color: black;
 }
 
 :after {
