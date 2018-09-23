@@ -15,8 +15,12 @@ export default class Interface extends React.Component {
                         Wins: {this.props.winCount} Losses: {this.props.lossCount}
                     </span>
                     <span id="buttons">
-                        <Button color="danger">Hit</Button>
-                        <Button color="success">Stand</Button>
+                        <Button 
+                        color="danger"
+                        disabled={this.props.hasStood}>Hit</Button>
+                        <Button 
+                        color="success"
+                        disabled={this.props.hasStood}>Stand</Button>
                     </span>
 
                 </div>
