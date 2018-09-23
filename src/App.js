@@ -13,8 +13,10 @@ class App extends Component {
           winCount={this.props.state.get('winCount')}
           lossCount={this.props.state.get('lossCount')}
           hasStood={this.props.state.get('hasStood')} />
-        <Hand />
-        <Hand />
+        <h1>Player's hand:</h1>
+        <Hand cards={this.props.state.get('playerHand')} />
+        <h1>Dealer's hand:</h1>
+        <Hand cards={this.props.state.get('dealerHand')} />
       </div>
     );
   }
