@@ -8,27 +8,40 @@ class Table extends Component {
         this.state = {
             suits: ['clubs', 'diamonds', 'hearts', 'spades'],
             values: [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'],
-            // colors: [
-            //     { id: 1, clubs: 'black', diamonds: 'red', hearts: 'red', spades: 'black' }
-            // ]
             showCards: false
         }
     }
 
+    card = (suits, values) => {
+        this.suits = suits;
+        this.values = values;
+        console.log(suits, values)
+    };
+
+    createDeck = () => {
+        let cards = [];
+        this.suits.forEach(function (values) {
+            this.values.forEach(function (type) {
+                cards.push(new card(type, values))
+            })
+        })
+    }
+    getRandomInt = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     shuffleSuits = () => {
-        {console.log(this.state.suits)}
-        let oldSuits = this.state.suits;
-        console.log(oldSuits.length);
+        { console.log(this.state.suits) }
+        const oldSuits = this.state.suits;
+        console.log(oldSuits);
         let newSuits = [];
         let i = 0, j = 0, temp = null;
-        for (i = oldSuits.length - 1; i > 0; i --) {
+        for (i = 0; i < oldSuits; i++) {
             j = Math.floor(Math.random() * (i + 1))
-            temp = oldSuits[i]
             oldSuits[i] = oldSuits[j]
-            oldSuits[j] = temp
             newSuits.push(j);
+            console.log(newSuits);
         }
-        console.log(newSuits)
     }
 
     // dealCards = () => {
