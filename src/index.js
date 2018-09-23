@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { fromJS } from 'immutable';
+import { fromJS, Map } from 'immutable';
 
 import { newDeck, deal } from './Library/Cards';
 import registerServiceWorker from './registerServiceWorker';
@@ -17,7 +17,9 @@ let deck = newDeck();
 let playerHand, dealerHand;
 
 [deck, playerHand] = deal(deck, 2);
-[deck, dealerHand] = deal(deck, 2);
+[deck, dealerHand] = deal(deck, 1);
+
+dealerHand = dealerHand.push(new Map());
 
 const state = fromJS({
     deck,
