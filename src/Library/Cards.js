@@ -1,5 +1,14 @@
 import { fromJS } from 'immutable';
 
+// ...
+
+// deal n cards from the end of List deck
+export const deal = (deck, n) => {
+    let dealt_cards = deck.takeLast(2);
+    let newDeck = deck.skipLast(2);
+    return [newDeck, dealt_cards];
+};
+
 export const shuffle = (array) => {
     let j, x, i;
     for (i = array.length; i; i -= 1) {

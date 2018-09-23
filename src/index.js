@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { newDeck } from './Library/Cards';
+import { fromJS } from 'immutable';
+
+import { newDeck, deal } from './Library/Cards';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,22 +14,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // ...
 
 let deck = newDeck();
-console.log("start deck:");
-console.log(deck);
+let playerHand, dealerHand;
 
-let playerHand = deck.takeLast(2);
-deck = deck.skipLast(2);
-let dealerHand = deck.takeLast(2);
-deck = deck.skipLast(2);
+[deck, playerHand] = deal(deck, 2);
+[deck, dealerHand] = deal(deck, 2);
 
-console.log("end deck:");
-console.log(deck);
-console.log("playerHand:");
-console.log(playerHand);
-console.log("dealerHand:");
-console.log(dealerHand);
+const state = fromJS({
+    deck,
+    playerHand,
+    dealerHand,
+    "winCount": 0,
+    "lossCount": 0,
+    hasStood: false
+});
+
+console.log(state);
 
 // ...
+// console.log("start deck:");
+// console.log(deck);
+// console.log("end deck:");
+// console.log(deck);
+// console.log("playerHand:");
+// console.log(playerHand);
+// console.log("dealerHand:");
+// console.log(dealerHand);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// // ...
+
+ReactDOM.render(<App state={state}/>, document.getElementById('root'));
 registerServiceWorker();

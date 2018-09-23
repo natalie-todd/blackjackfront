@@ -1,3 +1,5 @@
+//This is the "Info" component
+
 import React from 'react';
 import Outcome from './Outcome';
 import { Alert, Row, Col, Button } from 'reactstrap';
