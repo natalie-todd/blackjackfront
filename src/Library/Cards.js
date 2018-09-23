@@ -1,12 +1,24 @@
-import { fromJS } from 'immutable';
+import { fromJS, List } from 'immutable';
 
 // ...
 
 // deal n cards from the end of List deck
 export const deal = (deck, n) => {
-    let dealt_cards = deck.takeLast(2);
-    let newDeck = deck.skipLast(2);
-    return [newDeck, dealt_cards];
+    if (n == 1) {
+        const r = Math.floor(Math.random() * deck.size);
+        let dealtCards = new List([deck.get(r)]);
+        let newDeck = deck.remove(r);
+        return [newDeck, dealtCards]
+    }
+
+    let dealtCards = new List();
+    let newDeck = deck;
+    for (let i = 0; i < n; i += 1) {
+        let [d, c] = deal(newDeck, 1);
+        dealtCards = dealtCards.push(c.first());
+        newDeck = d;
+    }
+    return [newDeck, dealtCards];
 };
 
 export const shuffle = (array) => {
@@ -25,9 +37,9 @@ export const newDeck = () => {
 
     const deck = [];
 
-    ranks.forEach( (r) => {
-        suits.forEach( (s) => {
-            deck.push({ "rank": r, "suit": s});
+    ranks.forEach((r) => {
+        suits.forEach((s) => {
+            deck.push({ "rank": r, "suit": s });
         });
     });
 
