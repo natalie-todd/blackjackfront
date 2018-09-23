@@ -5,10 +5,11 @@
   height: 100vh;
 }
 
-.interface {
+.oInterface {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 @keyframes App-logo-spin {
