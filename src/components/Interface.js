@@ -10,19 +10,7 @@ const inter = (props) => {
             {console.log('interface is here')}
             <Outcome />
             <div>
-                <Row>
-                    <Col sx='6'>
-                        <Alert color='dark'>Dealer Score : </Alert></Col>
-                    <Col sx='6'>
-                        <Alert color='dark'>Player Score : </Alert></Col>
-                </Row>
-            </div>
-            <div>
-                <Button 
-                onClick={props.clicked}
-                color='success'>Deal</Button>
-                <Button color='danger'>Hit</Button>
-                <Button color='primary'>Stand</Button>
+                <p>This is the info component</p>
             </div>
         </div>
     )
