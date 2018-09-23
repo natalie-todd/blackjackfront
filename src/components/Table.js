@@ -12,23 +12,23 @@ class Table extends Component {
         }
     }
 
-    card = (suits, values) => {
-        this.suits = suits;
-        this.values = values;
-        console.log(suits, values)
-    };
+    // card = (suits, values) => {
+    //     this.suits = suits;
+    //     this.values = values;
+    //     console.log(suits, values)
+    // };
 
-    createDeck = () => {
-        let cards = [];
-        this.suits.forEach(function (values) {
-            this.values.forEach(function (type) {
-                cards.push(new card(type, values))
-            })
-        })
-    }
-    getRandomInt = (min, max) => {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    // createDeck = () => {
+    //     let cards = [];
+    //     this.suits.forEach(function (values) {
+    //         this.values.forEach(function (type) {
+    //             cards.push(new card(type, values))
+    //         })
+    //     })
+    // }
+    // getRandomInt = (min, max) => {
+    //     return Math.floor(Math.random() * (max - min + 1)) + min;
+    // }
 
     shuffleSuits = () => {
         { console.log(this.state.suits) }
