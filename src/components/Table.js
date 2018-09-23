@@ -16,10 +16,12 @@ class Table extends Component {
     }
 
     shuffleSuits = () => {
+        {console.log(this.state.suits)}
         let oldSuits = this.state.suits;
+        console.log(oldSuits.length);
         let newSuits = [];
         let i = 0, j = 0, temp = null;
-        for (i = oldSuits.length - 1; i > 0; i -= 1) {
+        for (i = oldSuits.length - 1; i > 0; i --) {
             j = Math.floor(Math.random() * (i + 1))
             temp = oldSuits[i]
             oldSuits[i] = oldSuits[j]
