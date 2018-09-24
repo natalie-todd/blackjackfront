@@ -2,6 +2,7 @@
   text-align: center;
   background-color: black;
   color: white;
+  height: 100vh;
 }
 
 .oInterface {
@@ -9,6 +10,11 @@
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.hand {
+  display: flex;
+  flex-direction: row;
 }
 
 @keyframes App-logo-spin {
