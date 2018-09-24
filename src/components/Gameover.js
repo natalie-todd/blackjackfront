@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert, Button } from 'reactstrap';
 
 export class Gameover extends React.Component {
     render() {
@@ -14,8 +15,10 @@ export class Gameover extends React.Component {
 
         return (
             <div id="Gameover">
-                {message}
-                <button onClick={this.props.nextGame}>Next Game</button>
+                <Alert color="dark">
+                    {message}
+                </Alert>
+                <Button color="primary" onClick={this.props.nextGame}>Next Game</Button>
             </div>
         );
     }
