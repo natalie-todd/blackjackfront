@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 // import Interface from './components/Interface';
 import Hand from './components/Hand';
-import './App.css';
+import { GameoverContainer } from './components/Gameover';
 import { InterfaceContainer } from './components/Interface';
+import './App.css';
 import { connect } from 'react-redux';
 
 export class App extends React.Component {
   render() {
+    let messageComponent;
+    if (this.props.gameOver) {
+      messageComponent = <GameoverContainer win={this.props.playerWon} />;
+    }
     return (
       <div className="App">
-        <h1>React Blackjack</h1>
+        <h1 className="Blackjack">BLACKJACK</h1>
+        <h3 className="dealerStands">DEALER STANDS ON 17</h3>
         <InterfaceContainer />
-        <h1>Player's hand:</h1>
+        {messageComponent}
+        <h2 className="handLab">Player</h2>
         <Hand cards={this.props.playerHand} />
-        <h1>Dealer's hand:</h1>
+        <h2 className="handLab">Dealer</h2>
         <Hand cards={this.props.dealerHand} />
       </div>
     );
@@ -22,8 +29,10 @@ export class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-      playerHand: state.get('playerHand'),
-      dealerHand: state.get('dealerHand')
+    playerHand: state.get('playerHand'),
+    dealerHand: state.get('dealerHand'),
+    gameOver: state.get('gameOver'),
+    playerWon: state.get('playerWon')
   };
 }
 

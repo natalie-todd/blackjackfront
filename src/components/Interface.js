@@ -3,11 +3,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
+import { dealToPlayer, stand } from '../Action_creators';
 
 export class Interface extends React.Component {
     render() {
+        let disableButtons = false;
+        if (this.props.hasStood || this.props.gameOver) {
+            disableButtons = true;
+        }
         return (
-            <div className='interface'>
+            <div id='interface'>
                 {console.log('interface is here')}
                 <div className='oInterface'>
                     <span id="player_record">
@@ -16,10 +21,16 @@ export class Interface extends React.Component {
                     <span id="buttons">
                         <Button
                             color="danger"
-                            disabled={this.props.hasStood}>Hit</Button>
+                            disabled={disableButtons}
+                            onClick={this.props.onClickHit}>
+                            Hit
+                            </Button>
                         <Button
-                            color="success"
-                            disabled={this.props.hasStood}>Stand</Button>
+                            color="warning"
+                            disabled={disableButtons}
+                            onClick={this.props.onClickStand}>
+                            Stand
+                            </Button>
                     </span>
                 </div>
             </div>
@@ -27,12 +38,23 @@ export class Interface extends React.Component {
     }
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     return {
         winCount: state.get('winCount'),
         lossCount: state.get('lossCount'),
-        hasStood: state.get('hasStood')
+        hasStood: state.get('hasStood'),
+        gameOver: state.get('gameOver')
     };
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClickHit: () => {
+            dispatch(dealToPlayer())
+        },
+        onClickStand: () => {
+            dispatch(stand());
+        }
+    }
+}
 
-export const InterfaceContainer = connect(mapStateToProps)(Interface);
+export const InterfaceContainer = connect(mapStateToProps, mapDispatchToProps)(Interface);

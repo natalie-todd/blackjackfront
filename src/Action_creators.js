@@ -9,3 +9,11 @@ export function setRecord(wins, losses) {
         losses
     };
 }
+
+export function dealToPlayer(seed = new Date().getTime()) {
+    return { "type": "DEAL_TO_PLAYER", seed };
+};
+
+export function stand(seed=new Date().getTime()) {
+    return { "type": "STAND", seed };
+};
