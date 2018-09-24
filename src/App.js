@@ -14,12 +14,13 @@ export class App extends React.Component {
     }
     return (
       <div className="App">
-        <h1>React Blackjack</h1>
+        <h1 className="Blackjack">BLACKJACK</h1>
+        <h3 className="dealerStands">DEALER STANDS ON 17</h3>
         <InterfaceContainer />
         {messageComponent}
-        <h1>Player's hand:</h1>
+        <h2 className="handLab">Player</h2>
         <Hand cards={this.props.playerHand} />
-        <h1>Dealer's hand:</h1>
+        <h2 className="handLab">Dealer</h2>
         <Hand cards={this.props.dealerHand} />
       </div>
     );

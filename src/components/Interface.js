@@ -26,7 +26,7 @@ export class Interface extends React.Component {
                             Hit
                             </Button>
                         <Button
-                            color="success"
+                            color="warning"
                             disabled={disableButtons}
                             onClick={this.props.onClickStand}>
                             Stand
