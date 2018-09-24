@@ -19,6 +19,7 @@
   flex-direction: row;
   justify-content: center;
   width: 70vw;
+  background-color: #003f1c;
 }
 
 .handSpace {
@@ -32,6 +33,7 @@
 }
 .dealerStands {
 color: #FFC108;
+font-family: 'Roboto', sans-serif;
 }
 
 #buttons {
@@ -51,6 +53,9 @@ color: #FFC108;
   }
   .App {
     height: auto;
+  }
+  .Blackjack {
+    font-size: 50px;
   }
 }
 
