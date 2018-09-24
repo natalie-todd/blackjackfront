@@ -12,10 +12,20 @@ const setupGame = (currentState, seed) => {
 
     const hasStood = false;
 
-    const gameOver = false;
-    const playerWon = undefined;
+    let gameOver = false;
+    let playerWon = undefined;
+    let winCount = currentState.get('winCount') || 0;
 
-    const newState = new Map({ deck, playerHand, dealerHand, hasStood, gameOver, playerWon });
+    if (score(playerHand) == 21) {
+        gameOver = true;
+        playerWon = true;
+        winCount += 1;
+    }
+
+    const newState = new Map({
+        deck, playerHand, dealerHand, hasStood, gameOver, playerWon,
+        winCount
+    });
 
     return currentState.merge(newState);
 };
@@ -37,7 +47,7 @@ const dealToPlayer = (currentState, seed) => {
         const lossCount = currentState.get('lossCount') + 1;
         const gameOver = true;
         const playerWon = false;
-        newState = newState.merge({lossCount, gameOver, playerWon});
+        newState = newState.merge({ lossCount, gameOver, playerWon });
     }
 
     return currentState.merge(newState);
