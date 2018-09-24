@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reducer from './Reducer';
 import { setupGame, setRecord } from './Action_creators';
 
-let store = createStore(reducer);
+let store = createStore(reducer, undefined, window.devToolsExtension ? window.devToolsExtension() : undefined);
 
 store.dispatch(setupGame());
 store.dispatch(setRecord(0, 0));
@@ -54,7 +54,9 @@ store.dispatch(setRecord(0, 0));
 
 // // ...
 
-ReactDOM.render(<Provider store={store}>
+ReactDOM.render(
+<Provider store={store}>
     <App state={store.getState()} />
-</Provider>, document.getElementById('root'));
+</Provider>, 
+document.getElementById('root'));
 registerServiceWorker();
