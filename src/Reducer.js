@@ -53,8 +53,23 @@ const dealToPlayer = (currentState, seed) => {
     return currentState.merge(newState);
 };
 
-const stand = (currentState) => {
-    return currentState.merge(new Map({ "hasStood": true }));
+const stand = (currentState, seed) => {
+    let newState = new Map({ "hasStood": true });
+
+    let dealerHand = currentState.get('dealerHand');
+    let deck = currentState.get('deck');
+
+    dealerHand = dealerHand.filter((element) => element != new Map());
+
+    while (score(dealerHand) < 17) {
+        let newCards;
+        [deck, newCards] = deal(deck, 1, 1);
+        dealerHand = dealerHand.push(newCards.get(0));
+    }
+
+    newState = newState.merge({ dealerHand, deck });
+
+    return currentState.merge(newState);
 };
 
 export default function (currentState = new Map(), action) {
