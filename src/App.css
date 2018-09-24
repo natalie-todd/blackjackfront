@@ -3,6 +3,7 @@
   background-color: #02602B;
   color: white;
   font-family: 'Prosto One', cursive;
+  height: 105vh;
 }
 
 
@@ -16,8 +17,14 @@
 .hand {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  width: 70vw;
 }
 
+.handSpace {
+  display: flex;
+  flex-direction: column;
+}
 .Blackjack {
   color: white;
   font-size: 8vw;
@@ -41,6 +48,9 @@ color: #FFC108;
   .handButton {
     margin: 6px;
     width: 20vw;
+  }
+  .App {
+    height: auto;
   }
 }
 
