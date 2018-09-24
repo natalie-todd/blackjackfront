@@ -3,7 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
-import { dealToPlayer } from '../Action_creators';
+import { dealToPlayer, stand } from '../Action_creators';
 
 export class Interface extends React.Component {
     render() {
@@ -29,7 +29,7 @@ export class Interface extends React.Component {
     }
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     return {
         winCount: state.get('winCount'),
         lossCount: state.get('lossCount'),
@@ -40,6 +40,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onClickHit: () => {
             dispatch(dealToPlayer())
+        },
+        onClickStand: () => {
+            dispatch(stand());
         }
     }
 }
