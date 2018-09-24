@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import Interface from './components/Interface';
 import Hand from './components/Hand';
-import { Gameover } from './components/Gameover';
+import { GameoverContainer } from './components/Gameover';
 import { InterfaceContainer } from './components/Interface';
 import './App.css';
 import { connect } from 'react-redux';
@@ -10,7 +10,7 @@ export class App extends React.Component {
   render() {
     let messageComponent;
     if (this.props.gameOver) {
-      messageComponent = <Gameover win={this.props.playerWon} />;
+      messageComponent = <GameoverContainer win={this.props.playerWon} />;
     }
     return (
       <div className="App">

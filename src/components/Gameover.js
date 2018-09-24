@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setupGame } from '../Action_creators';
 import { Alert, Button } from 'reactstrap';
 
 export class Gameover extends React.Component {
@@ -23,3 +25,11 @@ export class Gameover extends React.Component {
         );
     }
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        nextGame: () => dispatch(setupGame())
+    };
+}
+
+export const GameoverContainer = connect(undefined, mapDispatchToProps)(Gameover);

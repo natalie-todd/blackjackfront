@@ -7,6 +7,10 @@ import { dealToPlayer, stand } from '../Action_creators';
 
 export class Interface extends React.Component {
     render() {
+        let disableButtons = false;
+        if (this.props.hasStood || this.props.gameOver) {
+            disableButtons = true;
+        }
         return (
             <div id='interface'>
                 {console.log('interface is here')}
@@ -17,11 +21,16 @@ export class Interface extends React.Component {
                     <span id="buttons">
                         <Button
                             color="danger"
-                            disabled={this.props.hasStood}
-                            onClick={this.props.onClickHit}>Hit</Button>
+                            disabled={disableButtons}
+                            onClick={this.props.onClickHit}>
+                            Hit
+                            </Button>
                         <Button
                             color="success"
-                            disabled={this.props.hasStood}>Stand</Button>
+                            disabled={disableButtons}
+                            onClick={this.props.onClickStand}>
+                            Stand
+                            </Button>
                     </span>
                 </div>
             </div>
@@ -33,7 +42,8 @@ const mapStateToProps = (state) => {
     return {
         winCount: state.get('winCount'),
         lossCount: state.get('lossCount'),
-        hasStood: state.get('hasStood')
+        hasStood: state.get('hasStood'),
+        gameOver: state.get('gameOver')
     };
 }
 const mapDispatchToProps = (dispatch) => {
