@@ -27,6 +27,23 @@
 color: #FFC108;
 }
 
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.handButton {
+  margin: 6px;
+  width: 10vw;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .handButton {
+    margin: 6px;
+    width: 20vw;
+  }
+}
+
 .handLab {
   color: white;
   text-shadow: 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000, -3px 0 0 #000;
