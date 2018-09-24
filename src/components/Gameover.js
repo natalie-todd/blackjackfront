@@ -1,11 +1,22 @@
 import React from 'react';
 
-const outcome = () => {
-    return (
-        <div>
-            {console.log('outcome is here')}
-        </div>
-    )
-}
+export class Gameover extends React.Component {
+    render() {
+        let message;
 
-export default outcome;
+        if (this.props.win === undefined) {
+            message = "Tie game.";
+        } else if (this.props.win === true) {
+            message = "You win!";
+        } else {
+            message = "You lose :(";
+        }
+
+        return (
+            <div id="Gameover">
+                {message}
+                <button onClick={this.props.nextGame}>Next Game</button>
+            </div>
+        );
+    }
+}

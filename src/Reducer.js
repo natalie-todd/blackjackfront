@@ -12,7 +12,10 @@ const setupGame = (currentState, seed) => {
 
     const hasStood = false;
 
-    const newState = new Map({ deck, playerHand, dealerHand, hasStood });
+    const gameOver = false;
+    const playerWon = undefined;
+
+    const newState = new Map({ deck, playerHand, dealerHand, hasStood, gameOver, playerWon });
 
     return currentState.merge(newState);
 };
