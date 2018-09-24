@@ -1,29 +1,38 @@
-import React from 'react';
-import Outcome from './Outcome';
-import { Alert, Row, Col, Button } from 'reactstrap';
+//This is the "Info" component
 
-const inter = (props) => {
-    return (
-        <div className='interface'>
-            {console.log('interface is here')}
-            <Outcome />
-            <div>
-                <Row>
-                    <Col sx='6'>
-                        <Alert color='dark'>Dealer Score : </Alert></Col>
-                    <Col sx='6'>
-                        <Alert color='dark'>Player Score : </Alert></Col>
-                </Row>
+import React from 'react';
+import { connect } from 'react-redux';
+import { Button } from 'reactstrap';
+
+export class Interface extends React.Component {
+    render() {
+        return (
+            <div className='interface'>
+                {console.log('interface is here')}
+                <div className='oInterface'>
+                    <span id="player_record">
+                        Wins: {this.props.winCount} Losses: {this.props.lossCount}
+                    </span>
+                    <span id="buttons">
+                        <Button
+                            color="danger"
+                            disabled={this.props.hasStood}>Hit</Button>
+                        <Button
+                            color="success"
+                            disabled={this.props.hasStood}>Stand</Button>
+                    </span>
+                </div>
             </div>
-            <div>
-                <Button 
-                onClick={props.clicked}
-                color='success'>Deal</Button>
-                <Button color='danger'>Hit</Button>
-                <Button color='primary'>Stand</Button>
-            </div>
-        </div>
-    )
+        )
+    }
+};
+
+function mapStateToProps(state) {
+    return {
+        winCount: state.get('winCount'),
+        lossCount: state.get('lossCount'),
+        hasStood: state.get('hasStood')
+    };
 }
 
-export default inter;
+export const InterfaceContainer = connect(mapStateToProps)(Interface);

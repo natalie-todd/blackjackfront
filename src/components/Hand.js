@@ -1,20 +1,17 @@
 import React from 'react';
 import Card from './Card';
 
-const hand = (props) => {
-    return (
-        <div>
-            {console.log('hand is here')}
-            <Card
-                suit={props.suit}
-                test={props.test} 
-                />
-            <p>This hand is {props.test}.</p>
-            <Card
-                suit={props.suit[2]}
-                test={props.test} />
-        </div>
-    )
+export default class Hand extends React.Component {
+    render() {
+        return (
+            <div className='hand'>
+                {this.props.cards.map((card, i) =>
+                    <Card suit={card.get('suit')}
+                        rank={card.get('rank')}
+                        faceDown={!(card.has('suit') && card.has('rank'))}
+                        key={i} />
+                )}
+            </div>
+        )
+    }
 }
-
-export default hand;

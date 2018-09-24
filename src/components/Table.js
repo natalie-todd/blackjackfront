@@ -61,13 +61,13 @@ class Table extends Component {
         }
         return (
             <div>
-                {cards}
+                {/* {cards}
                 <Interface
                     test={this.state.values}
                     suit={this.state.suits}
                     clicked={this.shuffleSuits} />
                 {cards}
-                {console.log('table is here')}
+                {console.log('table is here')} */}
             </div>
         )
     }
