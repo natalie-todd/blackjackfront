@@ -21,12 +21,22 @@ const setRecord = (currentState, wins, losses) => {
     return currentState.merge(new Map({ "winCount": wins, "lossCount": losses }));
 }
 
+const dealToPlayer = (currentState, seed) => {
+    const [deck, newCard] = deal(currentState.get('deck'), 1, seed);
+
+    const playerHand = currentState.get('playerHand').push(newCard.get(0));
+
+    return currentState.merge(new Map({ deck, playerHand }));
+};
+
 export default function (currentState = new Map(), action) {
     switch (action.type) {
         case 'SETUP_GAME':
             return setupGame(currentState, action.seed);
         case 'SET_RECORD':
             return setRecord(currentState, action.wins, action.losses);
+        case 'DEAL_TO_PLAYER':
+            return dealToPlayer(currentState, action.seed);
     }
     return currentState;
 }
