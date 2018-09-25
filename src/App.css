@@ -13,6 +13,15 @@
   flex-wrap: wrap;
 }
 
+.alert {
+width: 100vw;
+height: 30vh;
+}
+
+.btn {
+  width: 10vw;
+}
+
 .hand {
   display: flex;
   flex-direction: row;
@@ -46,6 +55,20 @@ font-family: 'Roboto', sans-serif;
 .handButton {
   margin: 6px;
   width: 10vw;
+}
+
+.gameOver {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.anotherGame {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (max-device-width: 480px) {
