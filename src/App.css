@@ -3,7 +3,7 @@
   background-color: #02602B;
   color: white;
   font-family: 'Prosto One', cursive;
-  height: 105vh;
+  min-height: 100vh;
 }
 
 .oInterface {
@@ -20,6 +20,7 @@
   background-color: #003f1c;
   border-radius: 5px;
   border: 2px solid #A0BC05;
+  margin: 5vh;
 }
 
 .handSpace {

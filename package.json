@@ -11,7 +11,8 @@
     "react-scripts": "1.1.5",
     "reactstrap": "^6.4.0",
     "redux": "^4.0.0",
-    "seedrandom": "^2.4.4"
+    "seedrandom": "^2.4.4",
+    "sweetalert-react": "^0.4.11"
   },
   "scripts": {
     "start": "react-scripts start",
