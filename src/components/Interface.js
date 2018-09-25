@@ -20,12 +20,14 @@ export class Interface extends React.Component {
                     </span>
                     <span id="buttons">
                         <Button
+                            className="handButton"
                             color="danger"
                             disabled={disableButtons}
                             onClick={this.props.onClickHit}>
                             Hit
                             </Button>
                         <Button
+                            className="handButton"
                             color="warning"
                             disabled={disableButtons}
                             onClick={this.props.onClickStand}>
