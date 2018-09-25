@@ -3,7 +3,7 @@
   background-color: #02602B;
   color: white;
   font-family: 'Prosto One', cursive;
-  height: 105vh;
+  min-height: 100vh;
 }
 
 .oInterface {
@@ -13,6 +13,18 @@
   flex-wrap: wrap;
 }
 
+.alert {
+width: 100vw;
+height: 30vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.btn {
+  width: 10vw;
+}
+
 .hand {
   display: flex;
   flex-direction: row;
@@ -20,6 +32,7 @@
   background-color: #003f1c;
   border-radius: 5px;
   border: 2px solid #A0BC05;
+  margin: 3vh;
 }
 
 .handSpace {
@@ -45,6 +58,23 @@ font-family: 'Roboto', sans-serif;
 .handButton {
   margin: 6px;
   width: 10vw;
+}
+
+.gameOver {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.anotherGame {
+  position: absolute;
+  z-index: 10;
+  font-size: 8vh;
+  background-color: rgba(0,0,0,0.5); /*dim the background*/
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (max-device-width: 480px) {
