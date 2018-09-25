@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { fromJS, Map } from 'immutable';
-import { newDeck, deal } from './Library/Cards';
+// import { fromJS, Map } from 'immutable';
+// import { newDeck, deal } from './Library/Cards';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

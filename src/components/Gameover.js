@@ -12,7 +12,7 @@ export class Gameover extends React.Component {
         } else if (this.props.win === true) {
             message = "You win!";
         } else {
-            message = "You lose :(";
+            message = "Dealer wins!";
         }
 
         return (
