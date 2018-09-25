@@ -5,21 +5,25 @@ import { Alert, Button } from 'reactstrap';
 
 export class Gameover extends React.Component {
     render() {
-        let message;
+        let alert;
 
         if (this.props.win === undefined) {
-            message = "Tie game.";
+            alert = <Alert color="success">
+                Tie game.
+            </Alert>
         } else if (this.props.win === true) {
-            message = "You win!";
+            alert = <Alert color="success">
+                You win!
+        </Alert>
         } else {
-            message = "Dealer wins!";
+            alert = <Alert color="danger">
+                Dealer wins!
+        </Alert>
         }
 
         return (
             <div id="Gameover">
-                <Alert color="dark">
-                    {message}
-                </Alert>
+                {alert}
                 <Button color="primary" onClick={this.props.nextGame}>Next Game</Button>
             </div>
         );
