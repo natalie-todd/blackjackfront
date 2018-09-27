@@ -6,7 +6,6 @@ import { Alert, Button } from 'reactstrap';
 export class Gameover extends React.Component {
     render() {
         let alert;
-
         if (this.props.win === undefined) {
             alert = <Alert color="warning">
                 Tie game.
@@ -24,8 +23,8 @@ export class Gameover extends React.Component {
         return (
             <div id="Gameover" className="gameOver">
                 <div className="anotherGame">
-                {alert}
-                <Button color="primary" onClick={this.props.nextGame}>Next Game</Button>
+                    {alert}
+                    <Button color="primary" onClick={this.props.nextGame}>Next Game</Button>
                 </div>
             </div>
         );
