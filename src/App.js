@@ -3,10 +3,24 @@ import React, { Component } from 'react';
 import Hand from './components/Hand';
 import { GameoverContainer } from './components/Gameover';
 import { InterfaceContainer } from './components/Interface';
+import { HintContainer } from './components/Hint';
 import './App.css';
 import { connect } from 'react-redux';
 
+
 export class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
+    this.toggle = this.toggle.bind(this);
+  }
+  toggle() {
+    this.setState({
+      modal: !this.state.hintModal
+    });
+  }
   render() {
     let messageComponent;
     if (this.props.gameOver) {
@@ -14,7 +28,7 @@ export class App extends React.Component {
     }
     return (
       <div className="App">
-        <h1 class="hello-link" onClick="hello">Hello</h1>
+        <h1 className="hello-link" onClick={this.props.hintModal}>Hello</h1>
         <h1 className="Blackjack">BLACKJACK</h1>
         <h3 className="dealerStands">DEALER STANDS ON 17</h3>
         <InterfaceContainer />
@@ -29,6 +43,7 @@ export class App extends React.Component {
             <Hand cards={this.props.dealerHand} />
           </div>
         </div>
+        <HintContainer />
       </div>
     );
   }
