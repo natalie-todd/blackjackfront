@@ -14,11 +14,11 @@
 }
 
 .alert {
-width: 100vw;
-height: 30vh;
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
@@ -63,6 +63,7 @@ justify-content: center;
 }
 .Blackjack {
   color: white;
+  text-shadow: 3px 0 0 #003f1c, 0 -3px 0 #003f1c, 0 3px 0 #003f1c, -3px 0 0 #003f1c;
   font-size: 8vw;
   font-weight: bold;
 }
