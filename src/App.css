@@ -25,6 +25,22 @@ justify-content: center;
   width: 10vw;
 }
 
+h1.hello-link {
+  background-color: transparent;
+  color: transparent;
+  border-color: transparent;
+}
+h1.hello-link:hover {
+  cursor: default;
+  color: transparent;
+}
+h1.hello-link:active {
+  cursor: default;
+  background-color: transparent;
+  color: transparent;
+  border-color: transparent;
+}
+
 .hand {
   display: flex;
   flex-direction: row;
