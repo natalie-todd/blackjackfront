@@ -25,16 +25,16 @@ justify-content: center;
   width: 10vw;
 }
 
-h1.hello-link {
+#hello  {
   background-color: transparent;
   color: transparent;
   border-color: transparent;
 }
-h1.hello-link:hover {
-  cursor: default;
+#hello:hover {
+  cursor: ;
   color: transparent;
 }
-h1.hello-link:active {
+#hello:active {
   cursor: default;
   background-color: transparent;
   color: transparent;
