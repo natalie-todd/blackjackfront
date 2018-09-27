@@ -29,16 +29,21 @@ justify-content: center;
   background-color: transparent;
   color: transparent;
   border-color: transparent;
+  box-shadow: none!important;
 }
 #hello:hover {
-  cursor: ;
-  color: transparent;
-}
-#hello:active {
-  cursor: default;
+  cursor: auto;
   background-color: transparent;
   color: transparent;
   border-color: transparent;
+  box-shadow: none!important;
+}
+#hello:active {
+  cursor: auto;
+  background-color: transparent;
+  color: transparent;
+  border-color: transparent;
+  box-shadow: none!important;
 }
 
 .hand {
