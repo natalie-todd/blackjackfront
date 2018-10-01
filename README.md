@@ -1,28 +1,27 @@
 Contributors
 Natalie Todd natalie.todd15@gmail.com https://www.linkedin.com/in/natalie-todd/
 
-Travel Bug Description
-Travel bug allows a user to login and create a profile with desired destinations all over the world. Quickly add destinations you would like to visit and check off destinations as you complete your goals.
+Learn Blackjack Description
+Learn Blackjack allows a user to play Blackjack against a computer dealer. The player is offered hints if they take more than five seconds to decide on their next move.
 
 The Problem
-There isn't an application that allows users to organize national and international vacation timelines and goals.
+There isn't an application that gives users hints when playing Blackjack.
 
-How does Travel Bug solve this problem?
-Travel Bug will allow users to add and cross off locations and timelines to a travel bucketlist.
+How does Learn Blackjack solve this problem?
+Blackjack is geared toward players who are not already familiar with Blackjack in that it offers hints.
 
 Tech used
-Vue.js, Bootstrap-Vue, Express, Knex, CORS, postgreSQL
+React, Redux, Firebase
 
 Instructions
 1. Fork and clone repo to local directory
-2. $ cd intro-vue
+2. $ cd blackjackfront
 3. npm install
-4. npm run dev
-Travel Bug Front End Deployed Link
-https://travel-bug-67eb1.firebaseapp.com/
+4. npm start
+Learn Blackjack Deployed Link
+https://blackjack-b5b12.firebaseapp.com/
 
-Travel Bug Back End Deployed Links
-https://travel-bug-backend.herokuapp.com/profiles https://travel-bug-backend.herokuapp.com/posts
+Learn Blackjack Github Repo
+https://github.com/natalie-todd/travelBugFrontend2/blob/master/intro-vue/README.md
 
-Travel Bug Back End Github Repo
-https://github.com/ryanmccrory83/travelBugBackend
+<img src='./src/Learn-Blackjack.png' alt='Blackjack table with hint showing.'>
